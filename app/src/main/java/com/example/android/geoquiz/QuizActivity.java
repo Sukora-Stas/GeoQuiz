@@ -67,6 +67,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mCurrentIndex == 0) {
+                    toastMessage("it's first");
                     return;
                 }
                 mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
@@ -93,5 +94,9 @@ public class QuizActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
+    }
+
+    private void toastMessage(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 }
