@@ -19,6 +19,8 @@ public class QuizActivity extends AppCompatActivity {
     private Button mNextButton;
     private Button mPrevButton;
 
+    private Button mCheatButton;
+
     private TextView mQuestionTextView;
 
     private int mCurrentIndex = 0;
@@ -30,8 +32,6 @@ public class QuizActivity extends AppCompatActivity {
             new Question(R.string.question_americas, true),
             new Question(R.string.question_asia, true)
     };
-
-
 
 
     @Override
@@ -96,6 +96,16 @@ public class QuizActivity extends AppCompatActivity {
                 updateQuestion();
             }
         });
+
+        mCheatButton = (Button) findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         updateQuestion();
 
     }
