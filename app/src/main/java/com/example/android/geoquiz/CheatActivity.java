@@ -17,6 +17,8 @@ public class CheatActivity extends AppCompatActivity {
 
     public static final String EXTRA_ANSWER_IS_TRUE =
             "com.bignerdranch.android.geoquiz.answer_is_true";
+    public static final String EXTRA_ANSWER_SHOWN =
+            "com.bignerdranch.android.geoquiz.answer_shown";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +38,21 @@ public class CheatActivity extends AppCompatActivity {
                 } else {
                     mAnswerTextView.setText(R.string.false_button);
                 }
+                setAnswerShowResukt(true);
             }
         });
 
 
+    }
+
+    private void setAnswerShowResukt(boolean isAnswerShow) {
+        Intent data = new Intent();
+        data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShow);
+        setResult(RESULT_OK, data);
+    }
+
+    public static boolean wasAnswerShow(Intent result) {
+        return result.getBooleanExtra(EXTRA_ANSWER_SHOWN, false);
     }
 
     public static Intent newIntent(Context packageContext, boolean answerIsTrue) {
