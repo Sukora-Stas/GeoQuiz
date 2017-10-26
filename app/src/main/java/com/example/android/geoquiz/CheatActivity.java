@@ -46,10 +46,10 @@ public class CheatActivity extends AppCompatActivity {
                 }
                 setAnswerShowResukt(true);
 
-                int cx =mShowAnswer.getWidth()/2;
-                int cy=mShowAnswer.getHeight()/2;
+                int cx = mShowAnswer.getWidth() / 2;
+                int cy = mShowAnswer.getHeight() / 2;
                 float radius = mShowAnswer.getWidth();
-                Animator anim= ViewAnimationUtils.createCircularReveal(mShowAnswer,cx,cy,radius,0);
+                Animator anim = ViewAnimationUtils.createCircularReveal(mShowAnswer, cx, cy, radius, 0);
                 anim.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
