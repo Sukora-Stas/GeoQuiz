@@ -64,6 +64,7 @@ public class CheatActivity extends AppCompatActivity {
                     anim.start();
                 } else {
                     mAnswerTextView.setVisibility(View.VISIBLE);
+                    mShowAnswer.setVisibility(View.INVISIBLE);
                 }
             }
         });
