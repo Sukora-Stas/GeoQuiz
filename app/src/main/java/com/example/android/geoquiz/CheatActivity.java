@@ -23,9 +23,23 @@ public class CheatActivity extends AppCompatActivity {
     public static final String EXTRA_ANSWER_SHOWN =
             "com.bignerdranch.android.geoquiz.answer_shown";
 
+    private static final String KEY_INDEX = "index";
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(KEY_INDEX, mAnswerIsTrue);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            mAnswerIsTrue = savedInstanceState.getBoolean(KEY_INDEX, false);
+        }
+
         setContentView(R.layout.activity_cheat);
 
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
