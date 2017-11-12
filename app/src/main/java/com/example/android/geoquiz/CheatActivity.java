@@ -23,7 +23,9 @@ public class CheatActivity extends AppCompatActivity {
     public static final String EXTRA_ANSWER_SHOWN =
             "com.bignerdranch.android.geoquiz.answer_shown";
 
+
     private static final String KEY_ANSWER = "answer";
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
