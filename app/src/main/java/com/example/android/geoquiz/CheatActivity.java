@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,7 @@ public class CheatActivity extends AppCompatActivity {
     private boolean mAnswerIsTrue;
 
     private TextView mAnswerTextView;
+    private TextView mApiTextView;
     private Button mShowAnswer;
 
     public static final String EXTRA_ANSWER_IS_TRUE =
@@ -47,6 +49,9 @@ public class CheatActivity extends AppCompatActivity {
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
 
         mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
+
+        mApiTextView = (TextView) findViewById(R.id.apiLevelTextView);
+        mApiTextView.setText("Android " + Build.VERSION.RELEASE + ", API level " + Build.VERSION.SDK);
 
         mShowAnswer = (Button) findViewById(R.id.showAnswerButton);
         mShowAnswer.setOnClickListener(new View.OnClickListener() {
